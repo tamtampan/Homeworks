@@ -1,3 +1,5 @@
+import json
+
 from classes.agricultural_land_class import AgriculturalLand
 from classes.building_class import Building
 from classes.building_land_class import BuildingLand
@@ -103,3 +105,8 @@ class Agency:
             return GaragePlace
         elif property_type.upper() == "HOUSE":
             return House
+
+    @staticmethod
+    def deserialize_property_obj(line: str) -> object:
+        property_type = json.loads(line)["property_type"]
+        return Agency.convert_to_class(property_type).deserialization(line)

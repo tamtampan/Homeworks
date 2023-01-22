@@ -1,6 +1,7 @@
 import json
 import os
 from datetime import datetime
+from updating_functions import update_expired_contract_files
 
 from classes.agency_contract_class import AgencyContract
 from classes.client_class import Client
@@ -34,6 +35,7 @@ def add_new_property(agency: Agency) -> None:
             owner_object = Agency.get_person_by_id(owner_id, "owner")
             new_contract = AgencyContract(owner_object, agency, DATE, new_property.property_id)
             new_contract.make_contract()
+            print("Contract between owner and agency has been made.")
 
 
 def translate_property_type_option(input_string: str) -> str:
@@ -191,15 +193,18 @@ def main():
             else:
                 Client.add_new_client(client_id)
         elif option == "4":
-            owner_id = input("Write owner id: ")
-            if Agency.owner_in_system(owner_id):
-                owner_object = Agency.get_person_by_id(owner_id, "owner")
-                client_id = input("Write client id: ")
-                if Agency.client_in_system(client_id):
-                    client_object = Agency.get_person_by_id(client_id, "client")
-                    property_id = input("Write property id: ")
+            #owner_id = input("Write owner id: ")
+            #if Agency.owner_in_system(owner_id):
+                #owner_object = Agency.get_person_by_id(owner_id, "owner")
+            client_id = input("Write client id: ")
+            if Agency.client_in_system(client_id):
+                client_object = Agency.get_person_by_id(client_id, "client")
+                property_id = input("Write property id: ")
 
-                    if property_in_system(property_id):
+                if property_in_system(property_id):
+                    property_object = get_property_by_id(property_id)
+                    if Agency.owner_in_system(property_object.owner_id):
+                        owner_object = Agency.get_person_by_id(property_object.owner_id, "owner")
                         date = input("The date of signing the contract (separated by full stop): ")
                         while True:
                             if "." not in date or (len(date.split(".")[0]) > 2 or
@@ -211,26 +216,31 @@ def main():
                                 date = input("Date has to be in form dd.mm.yyyy.\n")
                             else:
                                 break
-                        expiry_date = input("Contract expiration date (separated by full stop): ")
-                        while True:
-                            if "." not in expiry_date or (len(expiry_date.split(".")[0]) > 2 or
-                                                          len(expiry_date.split(".")[1]) > 2 or
-                                                          len(expiry_date.split(".")[2]) != 4 or not
-                                                          (expiry_date.split(".")[0]).isdigit() or not
-                                                          (expiry_date.split(".")[1]).isdigit() or not
-                                                          (expiry_date.split(".")[2]).isdigit()):
-                                expiry_date = input("Date has to be in form dd.mm.yyyy.\n")
-                            else:
-                                break
+                        if property_object.offer.upper() == "SELL":
+                            expiry_date = "eternal"
+                        else:
+                            expiry_date = input("Contract expiration date (separated by full stop): ")
+                            while True:
+                                if "." not in expiry_date or (len(expiry_date.split(".")[0]) > 2 or
+                                                              len(expiry_date.split(".")[1]) > 2 or
+                                                              len(expiry_date.split(".")[2]) != 4 or not
+                                                              (expiry_date.split(".")[0]).isdigit() or not
+                                                              (expiry_date.split(".")[1]).isdigit() or not
+                                                              (expiry_date.split(".")[2]).isdigit()):
+                                    expiry_date = input("Date has to be in form dd.mm.yyyy.\n")
+                                else:
+                                    break
                         contract = ContractOwnerClient(owner=owner_object, agency=agency, property_id=property_id,
                                                        client=client_object, date=date, expiry_date=expiry_date)
                         contract.make_contract()
                     else:
-                        print("We can't make contract with unregistered property.")
+                        print("We can't make contracts with unregistered owner.")
                 else:
-                    print("We can't make contracts with unregistered client.")
+                    print("We can't make contract with unregistered property.")
             else:
-                print("We can't make contracts with unregistered owner.")
+                print("We can't make contracts with unregistered client.")
+            #else:
+                #print("We can't make contracts with unregistered owner.")
         elif option == "5":
             letter = input("Write initial letter/letters of name: ")
             phone = input("Write initial phone number/numbers: ")
@@ -266,6 +276,7 @@ def main():
 
 
 if __name__ == '__main__':
+    update_expired_contract_files()
     print("Options:\n1 - Add new property\n2 - Add new owner\n3 - Add new client\n4 - Make contract\n"
           "5 - Find owner by initial letters and phone numbers\n6 - Get price sorted offers\n"
           "7 - Contracts from specific year\nx - Close program")
@@ -275,5 +286,6 @@ if __name__ == '__main__':
 # {OWNER:OWNER_ID}
 # {1111660201865: 112946, 26052782551: 676255, 30129856252: 332145, 23565481111: 444487, 0606996423151: 111353,
 #   05064843214: 445662, 090699325147: 119991}
-# SOME CLIENTS IDS:
-# [030299632514, 09129876541, 1304997654020, 0203987654020, 0910988326502, 1408999656030]
+# SOME CLIENTS IDS:332145
+# [030299632514, 09129876541, 1304997654020, 0203987654020, 0910988326502]
+#646897

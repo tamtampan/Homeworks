@@ -18,7 +18,3 @@ CLIENT
 0910988326502
 {"address": "Kosanciceva 2", "city": "Kragujevac", "name": "Marko", "person_id": "0910988326502", "phone": "0116863355", "state": "Srbija", "surname": "Krstic"}
 
-CLIENT
-1408999656030
-{"address": "Resavska 65", "city": "Beograd", "name": "Nadezda", "person_id": "1408999656030", "phone": "0114648585", "state": "Srbija", "surname": "Ivic"}
-

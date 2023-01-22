@@ -16,3 +16,9 @@ PROPERTY
 {"address": "Karadjordjeva", "air_conditioner": "1", "area": "200", "cable_tv": "1", "city": "Beograd", "heating": "wood", "num_bedrooms": "3", "num_floors": "2", "offer": "Rent", "owner_id": "05064843214", "parking": "1", "price": "500", "property_id": "223-663", "property_type": "House", "state": "Srbija", "terrace": "2", "yard_area": "30"}
 
 
+CONTRACT
+{"agency_address": "Resavska 5", "agency_boss_name": "Pera", "agency_boss_surname": "Peric", "agency_city": "Belgrade", "agency_name": "Real estate agency", "agency_state": "Serbia", "client_address": "Trg Republike 12", "client_city": "Beograd", "client_id": "1304997654020", "client_name": "Sava", "client_phone": "0116667874", "client_state": "Srbija", "client_surname": "Petrovic", "contract_id": "646897/05064843214", "date": "01.01.2010.", "expiry_date": "eternal", "owner_address": "Mostarska 34", "owner_city": "Nis", "owner_id": "05064843214", "owner_name": "Ivica", "owner_phone": "0116554888", "owner_state": "Srbija", "owner_surname": "Jovanovic", "property_id": "646897", "property_price": "67000", "service_price": "670"}
+PROPERTY
+{"address": "Kralja Petra 56", "air_conditioner": "0", "area": "130", "cable_tv": "0", "city": "Nis", "heating": "gas", "num_bedrooms": "2", "num_floors": "1", "offer": "Sell", "owner_id": "05064843214", "parking": "0", "price": "67000", "property_id": "646897", "property_type": "House", "state": "Srbija", "terrace": "0", "yard_area": "10"}
+
+

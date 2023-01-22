@@ -52,6 +52,7 @@ def update_expired_contract_files() -> None:
                     expired_contracts.append(file.readline())
                     line = file.readline()
                     expired_contracts.append(line)
+                    expired_contracts.append("\n")
                     available_property_dicts.append(line)
                     expired_contracts_property_ids.append(dict_line["property_id"])
             else:
@@ -62,8 +63,7 @@ def update_expired_contract_files() -> None:
             file.write(contract)
     remove_expired_contract(expired_contracts_property_ids)
     for property_line in available_property_dicts:
-        property_dict = json.loads(property_line)
-        property_object = Agency.deserialize_property_obj(property_dict["property_type"], property_line)
+        property_object = Agency.deserialize_property_obj(property_line)
         with open("Property file.txt", "a") as file:
             file.write(property_object.serialization())
 

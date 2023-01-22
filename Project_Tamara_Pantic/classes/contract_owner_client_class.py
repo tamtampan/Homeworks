@@ -67,7 +67,7 @@ class ContractOwnerClient(Contract):
                 else:
                     line = file.readline()
         string_to_write = self.serialization() + "\nPROPERTY\n" + wanted_object + "\n\n"
-        if offer == "RENT":
+        if offer.upper() == "RENT":
             path = os.path.join(PATH, "Contracts", "Contracts owner-client", "Period contracts.txt")
         else:
             path = os.path.join(PATH, "Contracts", "Contracts owner-client", "Permanent contracts.txt")

@@ -32,6 +32,9 @@ class Property(ABC):
             offer = "Sell"
         elif offer == "2":
             offer = "Rent"
+        else:
+            print("Invalid input.")
+            return{}
         address = input("Property address: ")
         city = input("City: ")
         state = input("State: ")
@@ -42,6 +45,7 @@ class Property(ABC):
         area = input("Square meters: ")
         if not area.isdigit():
             print("Input is not digit.")
+            return {}
         property_id = input("Property id: (minimum 6 characters): ")
         return {"offer": offer, "address": address, "city": city, "state": state, "area": area, "price": price,
                 "property_id": property_id}

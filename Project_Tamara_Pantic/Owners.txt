@@ -42,3 +42,11 @@ OWNER
 0606998652010
 {"address": "Resavska 6", "city": "Beograd", "name": "Kosta", "person_id": "0606998652010", "phone": "0116861111", "state": "Srbija", "surname": "Simic"}
 
+OWNER
+9982892928
+{"address": "Beogradska", "city": "DD", "name": "Milance", "person_id": "9982892928", "phone": "afssfsfd", "state": "dd", "surname": "Petrovic"}
+
+OWNER
+ggg
+{"address": "x", "city": "x", "name": "x", "person_id": "ggg", "phone": "x", "state": "x", "surname": "x"}
+

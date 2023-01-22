@@ -1,0 +1,12 @@
+
+
+
+
+
+
+CONTRACT
+{"agency_address": "Resavska 5", "agency_boss_name": "Pera", "agency_boss_surname": "Peric", "agency_city": "Belgrade", "agency_name": "Real estate agency", "agency_state": "Serbia", "client_address": "Kosanciceva 2", "client_city": "Kragujevac", "client_id": "0910988326502", "client_name": "Marko", "client_phone": "0116863355", "client_state": "Srbija", "client_surname": "Krstic", "contract_id": "332145/30129856252", "date": "12.10.2023.", "expiry_date": "10.10.1922.", "owner_address": "Karadjordjeva 39", "owner_city": "Smederevo", "owner_id": "30129856252", "owner_name": "Lena", "owner_phone": "011564788", "owner_state": "Srbija", "owner_surname": "Markovic", "property_id": "332145", "property_price": "100000", "service_price": "1000"}
+PROPERTY
+{"address": "Milosa Velikog 8", "air_conditioner": "1", "area": "70", "cable_tv": "1", "city": "Smederevo", "elevator": "0", "floor_number": "1", "heating": "gas", "offer": "Rent", "owner_id": "30129856252", "parking": "1", "price": "100000", "property_id": "332145", "property_type": "Building", "state": "Srbija"}
+
+
