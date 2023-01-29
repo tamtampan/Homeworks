@@ -1,0 +1,2 @@
+from .device_model_repository import DeviceModelsRepository
+from .device_model_produces_beverage_repository import DeviceModelProducesBeverageRepository
