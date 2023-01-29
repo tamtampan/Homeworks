@@ -2,20 +2,20 @@ from device_model import DeviceModel
 
 if __name__ == "__main__":
     #  1 READ ALL DEVICE MODELS
-    print("ALL DEVICE MODELS:")
+    print("\nALL DEVICE MODELS:")
     device_models = DeviceModel.read_all()
     for device in device_models:
         print(device)
 
     # 2 GET MODEL BY ID
-    print("DEVICE MODEL BY ID(1):")
+    print("\nDEVICE MODEL BY ID(1):")
     try:
         print(DeviceModel.get_by_id(1))
     except Exception as e:
         print(e.__str__())
 
     # 3 CREATE DEVICE MODEL
-    print("CREATING DEVICE MODEL:")
+    print("\nCREATING DEVICE MODEL:")
     try:
         new_device_object = DeviceModel.create("Bosch", "TIS 30129RW", 1.4, 3, 1, 0.5, 1000, 1500)
         print(new_device_object)
@@ -23,7 +23,7 @@ if __name__ == "__main__":
         print(e)
 
     # 4 DELETE DEVICE MODEL
-    print("DELETING DEVICE MODEL BY ID(8):")
+    print("\nDELETING DEVICE MODEL BY ID(8):")
     try:
         if DeviceModel.delete(8):
             print("Device model deleted!")
@@ -31,7 +31,7 @@ if __name__ == "__main__":
         print(e)
 
     # 5 UPDATE DEVICE MODEL
-    print("UPDATING DEVICE MODEL:")
+    print("\nUPDATING DEVICE MODEL:")
     try:
         model_to_update = DeviceModel.get_by_id(3)
         model_to_update = model_to_update.update({"model_number": "1234567", "milk_capacity_kgs": "1.7"})
