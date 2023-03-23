@@ -1,3 +1,5 @@
+-- part 2
+
 -- DROP DATABASE IF EXISTS medical_record;
 CREATE DATABASE IF NOT EXISTS medical_record;
 USE medical_record;

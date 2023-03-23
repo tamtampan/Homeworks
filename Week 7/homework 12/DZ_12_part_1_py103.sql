@@ -1,3 +1,5 @@
+-- part 1
+
 -- DROP DATABASE IF EXISTS record;
 CREATE DATABASE IF NOT EXISTS record;
 USE record;
