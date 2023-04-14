@@ -1,0 +1,1 @@
+from .beverages_schemas import *

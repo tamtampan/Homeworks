@@ -1,0 +1,10 @@
+mysql-connector-python
+mysqlclient
+SQLAlchemy
+sqlalchemy-utils
+fastapi[all]~=0.89.1
+fastapi-utils
+
+uvicorn~=0.20.0
+pydantic~=1.10.4
+pydantic[dotenv]
